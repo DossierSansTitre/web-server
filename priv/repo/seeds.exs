@@ -1,11 +1,33 @@
-# Script for populating the database. You can run it as:
-#
-#     mix run priv/repo/seeds.exs
-#
-# Inside the script, you can read and write to any of your
-# repositories directly:
-#
-#     SansTitre.Repo.insert!(%SansTitre.SomeSchema{})
-#
-# We recommend using the bang functions (`insert!`, `update!`
-# and so on) as they will fail if something goes wrong.
+alias SansTitre.Repo
+alias SansTitre.Post
+
+Repo.delete_all Post
+
+Repo.insert! %Post{
+  title: "This is a test",
+  slug: "test-post",
+  body: """
+  Hello,
+  This is a test article.
+  *italics* **bold**
+  `code`
+  """
+}
+
+Repo.insert! %Post{
+  title: "Foo",
+  slug: "foo",
+  body: """
+  Foo Foo Foo
+  Foo Foo
+  Foo
+  """
+}
+
+Repo.insert! %Post{
+  title: "Bar",
+  slug: "bar",
+  body: """
+  Bar Bar Bar
+  """
+}

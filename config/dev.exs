@@ -39,8 +39,6 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :server, SansTitre.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "server_dev",
+  database: "sans_titre_dev",
   hostname: "localhost",
   pool_size: 10

@@ -5,7 +5,10 @@ defmodule SansTitreWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", SansTitreWeb do
+  scope "/", SansTitreWeb do
     pipe_through :api
+
+    get "/posts", PostController, :index
+    get "/posts/:slug", PostController, :show
   end
 end

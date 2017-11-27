@@ -12,8 +12,6 @@ config :logger, level: :warn
 # Configure your database
 config :server, SansTitre.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "server_test",
+  database: "sans_titre_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
